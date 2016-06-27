@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,7 +15,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Commands {
 
     public Commands(){
-        setDriver(new FirefoxDriver());
+        FirefoxProfile profile = new FirefoxProfile();
+        profile.setPreference("browser.startup.homepage","https://www.google.lk/");
+        setDriver(new FirefoxDriver(profile));
     }
 
     public WebDriver getDriver() {
